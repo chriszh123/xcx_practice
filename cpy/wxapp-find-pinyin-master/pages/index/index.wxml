@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="info-container">
+        <text class="pinyin-text">{{pinyinText}}</text>
+        <input maxlength="1" placeholder="请输入一个汉字" bind:input="onInput" focus="{{true}}"/>
+        <text class="">输入汉字</text>
+    </view>
+</view>
