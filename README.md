@@ -1,1 +1,1 @@
-# xcx_practice
+# 小程序练习。
