@@ -1,7 +1,0 @@
-<view class="container">
-    <view class="info-container">
-        <text class="pinyin-text">{{pinyinText}}</text>
-        <input maxlength="1" placeholder="汉字" bindinput="onInput" focus="{{true}}"/>
-        <text class="">输入汉字</text>
-    </view>
-</view>
