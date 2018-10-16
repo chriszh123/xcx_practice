@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/container/scrollView/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

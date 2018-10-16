@@ -1,0 +1,24 @@
+.bc_green {
+	background-color: green;
+	width: 10%;
+}
+
+.bc_red {
+	background-color: red;
+	width: 10%;
+}
+
+.bc_blue {
+	background-color: blue;
+	width: 10%;
+}
+
+.flex-wrp-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-wrp-column {
+	display: flex;
+	flex-direction: column;
+}
