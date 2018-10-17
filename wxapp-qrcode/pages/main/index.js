@@ -8,25 +8,30 @@ Page({
     */
 		maskHidden: true,
 		imagePath: '',
-		placeholder: 'baidu.com'
+		placeholder: 'http://baidu.com',
+		imageList: []
 	},
 	onload: function (options) {
 		// 页面初始化 options为页面跳转所带来的参数
 		var size = this.setCanvasSize(); //动态设置画布大小
-		var initUrl = "http://" + this.data.placeholder;
+		var initUrl = this.data.placeholder;
 		this.createQrCode(initUrl, 'mycanvas', size.w, size.h);
+		console.log("Page->onload:initUrl:" + initUrl);
 	},
 	onReady: function () {
-
+		console.log("Page->onReady");
 	},
 	onShow: function () {
 		//页面显示
+		console.log("Page->onShow");
 	},
 	onHide: function () {
 		//页面隐藏
+		console.log("Page->onHide");
 	},
 	onUnload: function () {
 		//页面关闭
+		console.log("Page->onUnload");
 	},
 	setCanvasSize: function () {
 		//适配不同屏幕大小的canvas
@@ -73,10 +78,74 @@ Page({
 		});
 	},
 	previewImg: function (e) {
+		// 点击图片进行预览，长按保存分享图片
 		var img = this.data.imagePath;
-		wx.previewImage({
-			current: img, // 当前显示图片的http链接
-			urls: [img] //需要预览的图片链接列表,
+		if (img && img != '') {
+			this.data.imageList.unshift(img);
+		}
+		//var img = `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495693185410&di=e28cc03d2ae84130eabc2
+		// 6bf0fc7495f&imgtype=0&src=http%3A%2F%2Fpic36.photophoto.cn%2F20150814%2F0005018308986502_b.jpg`;
+		console.log("previewImg img:" + img);
+		console.log("previewImg this.data.imageList:" + this.data.imageList);
+		// 这个接口, 按照官方示例, 可能只支持 http 或者 https 协议的网络图片地址.
+		// 微信本地的图片点击打开是黑的：wxfile://tmp_dc7fccd3897df1b6c6133311ce0ca453f59ced01324c3d76.png
+		if (this.data.imageList && this.data.imageList.length > 0) {
+			wx.previewImage({
+				urls: this.data.imageList //需要预览的图片链接列表,
+			});
+		} else {
+			wx.previewImage({
+				//current: img, // 当前显示图片的http链接
+				urls: [img] //需要预览的图片链接列表,
+			});
+		}
+
+		console.log("previewImg success!");
+	},
+	formSubmit: function (e) {
+		var that = this;
+		var url = e.detail.value.url;
+		url = url === '' ? (that.data.placeholder) : (url);
+		that.setData({
+			maskHidden: false
+		});
+		wx.showToast({
+			title: '生成中...', //提示的内容,
+			icon: 'loading', //图标,
+			duration: 2000, //延迟时间,
+			//mask: true, //显示透明蒙层，防止触摸穿透,
+			success: res => {}
+		});
+
+		var st = setTimeout(() => {
+			wx.hideToast();
+			var size = that.setCanvasSize();
+			//绘制二维码
+			that.createQrCode(url, 'mycanvas', size.w, size.h);
+			that.setData({
+				maskHidden: true
+			});
+			clearTimeout(st);
+		}, 2000);
+	},
+	chooseImge: function () {
+		var that = this;
+		console.log(1);
+		wx.chooseImage({
+			count: '9', //最多可以选择的图片张数,
+			sizeType: ["original", "compressed"], // 所选的图片的尺寸
+			sourceType: ["album", "camera"], // 选择图片的来源
+			success: res => {
+				this.setData({
+					imageList: res.tempFilePaths //返回图片的本地文件路径列表 tempFilePaths,
+				});
+			},
+			fail: () => {
+				console.log("chooseImge->fail");
+			},
+			complete: () => {
+				console.log("chooseImge->complete");
+			}
 		});
 	}
 });
