@@ -79,27 +79,32 @@ Page({
 	},
 	previewImg: function (e) {
 		// 点击图片进行预览，长按保存分享图片
-		var img = this.data.imagePath;
+		//var img = this.data.imagePath;
+		var img = `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495693185410&di=e28cc03d2ae84130eabc2
+		 6bf0fc7495f&imgtype=0&src=http%3A%2F%2Fpic36.photophoto.cn%2F20150814%2F0005018308986502_b.jpg`;
 		if (img && img != '') {
 			this.data.imageList.unshift(img);
 		}
-		//var img = `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495693185410&di=e28cc03d2ae84130eabc2
-		// 6bf0fc7495f&imgtype=0&src=http%3A%2F%2Fpic36.photophoto.cn%2F20150814%2F0005018308986502_b.jpg`;
+
 		console.log("previewImg img:" + img);
 		console.log("previewImg this.data.imageList:" + this.data.imageList);
 		// 这个接口, 按照官方示例, 可能只支持 http 或者 https 协议的网络图片地址.
 		// 微信本地的图片点击打开是黑的：wxfile://tmp_dc7fccd3897df1b6c6133311ce0ca453f59ced01324c3d76.png
 		if (this.data.imageList && this.data.imageList.length > 0) {
+			console.log("previewImg->this.data.imageList");
 			wx.previewImage({
 				urls: this.data.imageList //需要预览的图片链接列表,
 			});
 		} else {
+			console.log("previewImg->img");
 			wx.previewImage({
 				//current: img, // 当前显示图片的http链接
 				urls: [img] //需要预览的图片链接列表,
 			});
-		}
-
+        }
+        
+		// 同步清理本地数据缓存
+		wx.clearStorageSync();
 		console.log("previewImg success!");
 	},
 	formSubmit: function (e) {
