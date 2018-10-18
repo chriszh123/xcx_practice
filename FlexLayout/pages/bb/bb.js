@@ -27,5 +27,53 @@ Page({
 	},
 	getHoverd: function (src, dest) {
 		return (src === dest ? 'top-hoverd-btn' : '');
+	},
+	toNew: function () {
+		console.log("new");
+		this.updateBtnStatus("new");
+	},
+	toGood: function () {
+		console.log('good');
+		this.updateBtnStatus('good');
+	},
+
+	toChild: function () {
+		console.log('child');
+		this.updateBtnStatus('child');
+	},
+	toMom: function () {
+		console.log('mom');
+		this.updateBtnStatus('mom');
+	},
+	toGirl: function () {
+		console.log('girl');
+		this.updateBtnStatus('girl');
+	},
+	toShoe: function () {
+		console.log('shoe');
+		this.updateBtnStatus('shoe');
+	},
+	toHome: function () {
+		console.log('home');
+		this.updateBtnStatus('home');
+	},
+	toBeauti: function () {
+		console.log('beauti');
+		this.updateBtnStatus('beauti');
+	},
+	toFood: function () {
+		console.log('food');
+		this.updateBtnStatus('food');
+	},
+	onLaunch: function () {
+		console.log('bb Launching ...');
+	},
+	onShow: function () {
+		var that = this;
+		setTimeout(function () {
+			this.setData({
+				hidden: true
+			});
+		}, 1500);
 	}
 });
