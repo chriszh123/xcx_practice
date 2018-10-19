@@ -20,7 +20,7 @@
 
 .top-hoverd-btn {
 	color: #42bd56;
-	border-bottom: #42bd56 solid 1px;
+	border-bottom: #42bd56 solid 2px;
 }
 
 .content {

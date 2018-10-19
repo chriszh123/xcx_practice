@@ -13,7 +13,7 @@
 <!--  -->
 <scroll-view scroll-y="true" class="content">
     <view class="img-poster">
-        <image mode="scaleToFill" class="actual-img" src="https://qnmob.doubanio.com/img/files/file-1475046357.jpg?imageView2/2/q/60/w/600/h/0/format/jpg"></image>
+        <image mode="scaleToFill" class="actual-img" src="{{imageUrls[0]}}" mode="aspectFill"></image>
     </view>
     <!--  -->
     <view class="col3">
@@ -23,16 +23,16 @@
         </view>
         <scroll-view scroll-x="true" class="col3-img-list">
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2382076389.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[1]}}" mode="aspectFill"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2377470803.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[2]}}" mode="aspectFill"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[3]}}" mode="aspectFill"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2380681527.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[4]}}" mode="aspectFill"></image>
             </view>
         </scroll-view>
     </view>
@@ -44,19 +44,19 @@
         </view>
         <scroll-view scroll-x="true" class="col3-img-list">
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2351313845.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[0]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2324130130.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[1]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2332944143.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[2]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2367899630.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[3]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2346212678.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[4]}}"></image>
             </view>
         </scroll-view>
     </view>
@@ -68,16 +68,16 @@
         </view>
         <scroll-view scroll-x="true" class="col3-img-list">
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2355441956.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[0]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2318975149.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[1]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2371503931.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[2]}}"></image>
             </view>
             <view class="col3-img">
-                <image class="c3-actual-img" mode="scaleToFill" src="https://qnmob.doubanio.com/view/movie_poster_cover/lpst/public/p2322079398.jpg?imageView2/0/q/80/w/9999/h/300/format/jpg"></image>
+                <image class="c3-actual-img" mode="scaleToFill" src="{{imageUrls[3]}}"></image>
             </view>
         </scroll-view>
     </view>

@@ -7,7 +7,13 @@ Page({
 		active: '',
 		music: '',
 		other: '',
-		other1: ''
+		other1: '',
+		imageUrls: ['http://img1.3lian.com/2015/w7/85/d/101.jpg',
+			`http://img1.3lian.com/2015/w7/85/d/101.jpg`,
+			`http://img1.3lian.com/2015/w7/85/d/101.jpg`,
+			`http://img1.3lian.com/2015/w7/85/d/101.jpg`,
+			`http://img1.3lian.com/2015/w7/85/d/101.jpg`
+		]
 	},
 	onLoad: function (options) {
 		console.log('douban Launching ...');

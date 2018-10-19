@@ -69,9 +69,10 @@ Page({
 		console.log('bb Launching ...');
 	},
 	onShow: function () {
+        console.log("onShow......");
 		var that = this;
 		setTimeout(function () {
-			this.setData({
+			that.setData({
 				hidden: true
 			});
 		}, 1500);
